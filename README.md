@@ -34,10 +34,18 @@ GH and AzDO Lab
 
     You should now see two slots, the production slot and the new, pre-prod slot.
 
-## Update your GitHub workflow to add an action to swap the slots
+## Update your GitHub workflow to deploy to the pre-prod slot
 1. Open a new tab and browse to your GitHub account. 
 1. Click on **Repositories** to view your repositories. 
 1. Open your new repository by clicking on its name. It is named the same as the name of the App Service you created. 
 1. Click on **.github/workflows** then **devops-starter-workflow.yml** to see the CICD pipeline that was created by the DevOps Starter project. 
 
-    The workflow contains three jobs. **build**, **Deploy**, and **FunctionalTests**.
+    The workflow contains three jobs. **build**, **Deploy**, and **FunctionalTests**. We're going to update it to add a slot swap action.
+
+1. To enter edit mode, click on the **pencil icon** at the top right of the file listing. 
+1. Add an environment variable called **SLOT_NAME:** with the value of **"pre-prod"**. Be sure to indent the variable the same as the other enviromnent variables. 
+1. Modify the web app deploy action to deploy to the pre-prod slot instead of the production slot. (It should be on line 123 or so.)
+1. Change the comment to **Deploy web app to pre-prod slot**
+1. Change the name of the action to **'Deploy to Azure WebApp pre-prod slot'**
+1. After the **package:** attribute, add a blank line and type **slot-name: ${{ env.SLOT_NAME }}** (Be sure the slot-name: attribute is indented the same as the package: attribute.)
+
