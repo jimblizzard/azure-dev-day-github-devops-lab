@@ -48,4 +48,29 @@ GH and AzDO Lab
 1. Change the comment to **Deploy web app to pre-prod slot**
 1. Change the name of the action to **'Deploy to Azure WebApp pre-prod slot'**
 1. After the **package:** attribute, add a blank line and type **slot-name: ${{ env.SLOT_NAME }}** (Be sure the slot-name: attribute is indented the same as the package: attribute.)
+1. Update the **Run Functional Tests** action to run against the **pre-prod** slot, by adding the new environment variable to the website's URL. Don't forget to include a dash between the web app name and the slot name so it looks similar to this: 
 
+## Commit the changes and watch the updated workflow run
+1. In the upper right of the page, 1) click on **Start commit**, 2) enter a commit message, and 3) click on **commit changes**.
+
+    Your workflow will immediately start running since it's configured to run anytime anything is pushed to the master branch. 
+
+1. Click on **Actions** to see the workflow runs. 
+1. Click on the latest workflow to see it running. It will take several minutes to complete.
+1. You'll see the current state of the three jobs that are in the workflow. You can click on the name of each job to see the log messages for each. 
+1. Once the workflow completes, switch to the Azure Portal tab and from the Deployment slots view, click on the pre-prod slot link, then click on the URL for the pre-prod website. 
+
+    You should see the Success message on the pre-prod site.  
+
+## Extra credit
+Update the workflow to do a slot swap, to swap the production and pre-prod slots, then make a change to the website. Basic outline: 
+1. Add new job to the end of the workflow. Be sure to add "needs: FunctionalTests" to make sure it runs after the FunctionalTests job completes. 
+1. Add a login to Azure action
+1. Add a swap slots action (you'll need to use the Azure CLI to run the command). 
+
+    The newly added job should look similar to this:
+
+1. In the file **Application/views/index.pug** change the **.success-text** message to something such as **p Version 100 - Success!!**
+1. Commit the change.
+1. Watch the workflow run.
+1. Once the workflow completes, check the pre-prod website and the production website. The production website should have the new version message, and the pre-prod slot will have the old message. 
