@@ -1,7 +1,7 @@
-# azuredevday
+# azuredevday lab for GH DevOps
 
-GH and AzDO Lab 
-still needs images
+GH and DevOps Lab 
+.... still needs images
 
 ## Create an Azure DevOps Starter Project
 
