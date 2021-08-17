@@ -26,30 +26,49 @@ GH and DevOps Lab
 ## View your DevOps Starter project and create a Deployment slot
 
 1. Click on **Authorize** to allow Azure to access your GitHub account to view the latest workflow execution and status of jobs
-1. CLick on **Authorize** to finish connecting your GitHub account
-1. From here you can see the GitHub workflow and the Azure resources that were created. 
+1. Cick on **Authorize** to finish connecting your GitHub account.
+1. From here you can see the GitHub workflow and the Azure resources that were created.
 1. Click on your App Service name to go to the App Service definition in the Azure portal.
-1. Click on **Deployment slots** 
-1. Click on **+ Add Slot** and name the slot "pre-prod" and choose Clone settings from: **{your production slot name}**
-1. Click **Add**. It will take a minute or so to create the pre-prod slot. Once it finishes, click **Close** at the boottom of that window.
+    ![app service name](./images/devops-starter-post-deploy.png)
+1. To create the deployment slot, 
+    ![deployment slots](./images/deployment-slots-1.png)
+    1. Click on **Deployment slots**
+    1. Click on **+ Add Slot**  
+    1. Name the slot "pre-prod"
+    1. Choose Clone settings from: **{your production slot name}**
+    1. Click **Add**.
+    1. It will take a minute or so to create the pre-prod slot. Once it finishes, click **Close** at the boottom of that window.
 
-    You should now see two slots, the production slot and the new, pre-prod slot.
+### You should now see two slots, the production slot and the new, pre-prod slot
+
+![deployment slots](./images/deployment-slots.png)
 
 ## Update your GitHub workflow to deploy to the pre-prod slot
-1. Open a new tab and browse to your GitHub account. 
+
+1. Open a new tab and go to your GitHub account. https://github.com/{your-gh-account}
 1. Click on **Repositories** to view your repositories. 
+    ![repositories](./images/repositories-1.png)
 1. Open your new repository by clicking on its name. It is named the same as the name of the App Service you created. 
-1. Click on **.github/workflows** then **devops-starter-workflow.yml** to see the CICD pipeline that was created by the DevOps Starter project. 
+    ![open your repo](./images/open-your-repo.png)
+1. Open your CICD workflow. 
+    1. Click on **.github/workflows** 
+    ![open .github workflows](./images/open-github-workflows.png)
+    1. On the page that opens up, Click on **devops-starter-workflow.yml** to see the CICD pipeline that was created by the DevOps Starter project. 
+    ![Open yaml workflow](./images/open-workflow-1.png)
 
-    The workflow contains three jobs. **build**, **Deploy**, and **FunctionalTests**. We're going to update it to add a slot swap action.
+    The workflow contains three jobs. **build**, **Deploy**, and **FunctionalTests**. We're going to update the workflow to add a slot swap action.
 
-1. To enter edit mode, click on the **pencil icon** at the top right of the file listing. 
-1. Add an environment variable called **SLOT_NAME:** with the value of **"pre-prod"**. Be sure to indent the variable the same as the other enviromnent variables. 
+1. Enter edit mode by clicking on the **pencil icon** at the top right of the file listing. 
+    ![Enter edit mode](./images/click-on-pencil.png)
+1. Add an environment variable called **SLOT_NAME:** with the value of **"pre-prod"**. Be sure to indent the variable the same as the other enviromnent variables.
+    ![Add SLOT_NAME environment variable](./images/add-slot-env-var.png)
 1. Modify the web app deploy action to deploy to the pre-prod slot instead of the production slot. (It should be on line 123 or so.)
-1. Change the comment to **Deploy web app to pre-prod slot**
-1. Change the name of the action to **'Deploy to Azure WebApp pre-prod slot'**
-1. After the **package:** attribute, add a blank line and type **slot-name: ${{ env.SLOT_NAME }}** (Be sure the slot-name: attribute is indented the same as the package: attribute.)
-1. Update the **Run Functional Tests** action to run against the **pre-prod** slot, by adding the new environment variable to the website's URL. Don't forget to include a dash between the web app name and the slot name so it looks similar to this: 
+    1. Change the comment to **Deploy web app to pre-prod slot**
+    1. Change the name of the action to **'Deploy to Azure WebApp pre-prod slot'**
+    1. After the **package:** attribute, add a blank line and type **slot-name: ${{ env.SLOT_NAME }}** (Be sure the slot-name: attribute is indented the same as the package: attribute.)
+    ![Deploy to slot](./images/change-deploy-to-slot.png)
+1. Update the **Run Functional Tests** action to run against the **pre-prod** slot, by adding the new environment variable to the website's URL. *Don't forget to include a dash between the web app name and the slot name so it looks similar to this:*
+    ![Change functional test to test the slot](./images/functional-test-against-slot.png)
 
 ## Commit the changes and watch the updated workflow run
 1. In the upper right of the page, 1) click on **Start commit**, 2) enter a commit message, and 3) click on **commit changes**.
