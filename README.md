@@ -3,7 +3,7 @@
 In this lab we're going to see how easy it is to create a functional Azure Web App with its source code stored in GitHub and a GitHub CICD workflow that builds and deploys the web app. . . in just a matter of minutes.
 ## Create an Azure DevOps Starter Project
 
-1. Sign into the Microsoft Azure Portal
+1. Open a browser and sign into the Microsoft Azure Portal at <https://portal.azure.com>
 1. In the **search bar**, type **DevOps Starter** and then either **press Return** or **click on DevOps Starter** under **Services**
     ![DevOps starter](./images/devops-starter-1.png)
 1. Click on **+ Create**
