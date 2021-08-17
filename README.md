@@ -8,6 +8,7 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
 1. In the **search bar**, type **DevOps Starter** and then either **press Return** or **click on DevOps Starter** under **Services**
     ![DevOps starter](./images/devops-starter-1.png)
 1. Click on **+ Create**
+
     ![DevOps Starter Create](./images/devops-starter-2.png)
 1. On the next screen, **make sure that the DevOps Starter is going to use GitHub.** If it isn't, click on the **change settings here** link.
 
