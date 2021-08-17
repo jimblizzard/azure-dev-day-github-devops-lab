@@ -10,6 +10,7 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
 1. Click on **+ Create**
     ![DevOps Starter Create](./images/devops-starter-2.png)
 1. On the next screen, **make sure that the DevOps Starter is going to use GitHub.** If it isn't, click on the **change settings here** link.
+
     ![DevOps Starter Create](./images/devops-starter-3.png)
 1. For this lab, create a Node.js web app that uses Express.js, and runs as a Windows Web App.
     1. Select the **Node.js** box.
