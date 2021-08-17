@@ -59,9 +59,9 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
 1. **Open a new tab** and go to your GitHub account. https://github.com/{your-gh-account}
 1. Click on **Repositories** to view your repositories. 
     ![repositories](./images/repositories-1.png)
-1. Open your new repository by clicking on its name. It is named the same as the name of the App Service you created. 
+1. Open the repository that the DevOps Starter created for you by clicking on its name. It's name is the same as the name of the App Service you created. 
     ![open your repo](./images/open-your-repo.png)
-1. Open your CICD workflow. 
+1. Open the CICD workflow. 
     1. Click on **.github/workflows** 
     ![open .github workflows](./images/open-github-workflows.png)
     1. On the page that opens up, Click on **devops-starter-workflow.yml** to see the CICD pipeline that was created by the DevOps Starter project. 
