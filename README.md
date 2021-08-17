@@ -1,8 +1,6 @@
-# azuredevday lab for GH DevOps
+# Azure dev day lab for GH DevOps
 
-GH and DevOps Lab 
-.... still needs images
-
+In this lab we're going to see how easy it is to create a functional Azure Web App with its source code stored in GitHub and a GitHub CICD workflow that builds and deploys the web app. . . in just a matter of minutes.
 ## Create an Azure DevOps Starter Project
 
 1. Sign into the Microsoft Azure Portal
@@ -73,24 +71,40 @@ GH and DevOps Lab
 ## Commit the changes and watch the updated workflow run
 1. In the upper right of the page, 1) click on **Start commit**, 2) enter a commit message, and 3) click on **commit changes**.
 
-    Your workflow will immediately start running since it's configured to run anytime anything is pushed to the master branch. 
+    Your workflow will immediately start running since it's configured to run anytime anything is pushed to the master branch.
 
-1. Click on **Actions** to see the workflow runs. 
+    ![Commit changes](./images/commit-changes.png)
+
+1. Click on **Actions** to see the workflow runs.
+    ![Open Actions](./images/open-actions.png)
+
 1. Click on the latest workflow to see it running. It will take several minutes to complete.
-1. You'll see the current state of the three jobs that are in the workflow. You can click on the name of each job to see the log messages for each. 
+    ![Open workflow run](./images/open-workflow-run.png)
+1. You'll see the current state of the three jobs that are in the workflow.
+    ![In progress workflow](./images/in-progress-workflow.png)
+
+    You can click on the name of each job to see the log messages for each.
+    ![Looking at workflow logs](./images/looking-at-workflow-logs.png)
+
 1. Once the workflow completes, switch to the Azure Portal tab and from the Deployment slots view, click on the pre-prod slot link, then click on the URL for the pre-prod website. 
 
     You should see the Success message on the pre-prod site.  
 
+    ![Working slot](./images/working-slot.png)
 ## Extra credit
 Update the workflow to do a slot swap, to swap the production and pre-prod slots, then make a change to the website. Basic outline: 
+
 1. Add new job to the end of the workflow. Be sure to add "needs: FunctionalTests" to make sure it runs after the FunctionalTests job completes. 
 1. Add a login to Azure action
 1. Add a swap slots action (you'll need to use the Azure CLI to run the command). 
 
     The newly added job should look similar to this:
 
+    ![Swap Slots Job](./images/swap-slots.png)
+
 1. In the file **Application/views/index.pug** change the **.success-text** message to something such as **p Version 100 - Success!!**
+
+    ![Modify success text](./images/modify-success-text.png)
 1. Commit the change.
 1. Watch the workflow run.
 1. Once the workflow completes, check the pre-prod website and the production website. The production website should have the new version message, and the pre-prod slot will have the old message. 
