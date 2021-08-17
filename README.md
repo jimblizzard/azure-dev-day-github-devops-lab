@@ -1,38 +1,51 @@
-# Azure dev day lab for GH DevOps
+# Azure Dev Day Lab for GitHub DevOps
 
 In this lab we're going to see how easy it is to create a functional Azure Web App with its source code stored in GitHub and a GitHub CICD workflow that builds and deploys the web app. . . in just a matter of minutes.
 ## Create an Azure DevOps Starter Project
 
 1. Sign into the Microsoft Azure Portal
-1. In the search bar, type **DevOps Starter** and press **Return**
+1. In the **search bar**, type **DevOps Starter** and then either **press Return** or **click on DevOps Starter** under **Services**
+    ![DevOps starter](./images/devops-starter-1.png)
 1. Click on **+ Create**
-1. Make sure that it's going to set up the DevOps starter with Github. If it isn't, click on the **change settings here** link.
-1. Select the **Node.js** box.
-1. Click **Next: Framework >**
-1. Select the **Express.js** box. There's no need to add a database. 
-1. Click **Next: Service >**
-1. Select the **Windows Web App** box. 
-1. Select **Next: Create >**
-1. Click **Authorize** to a
-1. Enter your GitHub Organization, Repository, Azure SubScription, Web app name, and Location. 
-1. Click **Review + Create**
+    ![DevOps Starter Create](./images/devops-starter-2.png)
+1. On the next screen, **make sure that the DevOps Starter is going to use GitHub.** If it isn't, click on the **change settings here** link.
+    ![DevOps Starter Create](./images/devops-starter-3.png)
+1. For this lab, create a Node.js web app that uses Express.js, and runs as a Windows Web App.
+    1. Select the **Node.js** box.
+    1. Click **Next: Framework >**
+        ![DevOps Starter Create](./images/devops-starter-4.png)
+    1. Select the **Express.js** box. There's no need to add a database. 
+    1. Click **Next: Service >**
+        ![DevOps Starter Create](./images/devops-starter-5.png)
+    1. Select the **Windows Web App** box. 
+    1. Select **Next: Create >**
+        ![DevOps Starter Create](./images/devops-starter-6.png)
+
+    1. Click **Authorize** to allow Azure to access your GitHub account & create the workflow.
+        ![DevOps Starter Create](./images/devops-starter-7.png)
+    1. Enter your GitHub Organization, Repository, Azure SubScription, Web app name, and Location. 
+    1. Click **Review + Create**
+        ![DevOps Starter Create](./images/devops-starter-8.png)
 
     Note: It will take a few minutes to create the Azure and GitHub resources. Go grab a soda or some coffee. 
 
 1. Once the deployment completes, click on **Go to resource** to view the deployment. 
+    ![DevOps Starter Create](./images/devops-starter-9.png)
 
 ## View your DevOps Starter project and create a Deployment slot
 
 1. Click on **Authorize** to allow Azure to access your GitHub account to view the latest workflow execution and status of jobs
+    ![DevOps Starter Create](./images/devops-starter-10.png)
 1. Cick on **Authorize** to finish connecting your GitHub account.
-1. From here you can see the GitHub workflow and the Azure resources that were created.
+    ![DevOps Starter Create](./images/devops-starter-11.png)
+1. At this point you can see the GitHub workflow and the Azure resources that were created.
 1. Click on your App Service name to go to the App Service definition in the Azure portal.
     ![app service name](./images/devops-starter-post-deploy.png)
 1. To create the deployment slot, 
     ![deployment slots](./images/deployment-slots-1.png)
     1. Click on **Deployment slots**
     1. Click on **+ Add Slot**  
-    1. Name the slot "pre-prod"
+    1. Name the slot **"pre-prod"** NOTE: You'll use the slot name later on when you update your CICD pipeline.
     1. Choose Clone settings from: **{your production slot name}**
     1. Click **Add**.
     1. It will take a minute or so to create the pre-prod slot. Once it finishes, click **Close** at the boottom of that window.
@@ -43,7 +56,7 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
 
 ## Update your GitHub workflow to deploy to the pre-prod slot
 
-1. Open a new tab and go to your GitHub account. https://github.com/{your-gh-account}
+1. **Open a new tab** and go to your GitHub account. https://github.com/{your-gh-account}
 1. Click on **Repositories** to view your repositories. 
     ![repositories](./images/repositories-1.png)
 1. Open your new repository by clicking on its name. It is named the same as the name of the App Service you created. 
