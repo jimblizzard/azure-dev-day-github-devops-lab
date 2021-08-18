@@ -117,6 +117,9 @@ Update the workflow to do a slot swap, to swap the production and pre-prod slots
 
     ![Swap Slots Job](./images/swap-slots.png)
 
+1. Comment out the ARM Template deploy action. (If you don't do this, your pipeline will fail.)
+    ![DevOps Starter Create](./images/comment-the-arm-template-deploy-action.png)
+
 1. In the file **Application/views/index.pug** change the **.success-text** message to something such as **p Version 100 - Success!!**
 
     ![Modify success text](./images/modify-success-text.png)
