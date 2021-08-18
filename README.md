@@ -85,9 +85,8 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
     ![Change functional test to test the slot](./images/functional-test-against-slot.png)
 
 ## Commit the changes and watch the updated workflow run
-1. In the upper right of the page, 1) click on **Start commit**, 2) enter a commit message, and 3) click on **commit changes**.
 
-    Your workflow will immediately start running since it's configured to run anytime anything is pushed to the master branch.
+1. In the upper right of the page, 1) click on **Start commit**, 2) enter a commit message, and 3) click on **commit changes**. Note that your workflow will immediately start running since it's configured to run anytime anything is pushed to the master branch.
 
     ![Commit changes](./images/commit-changes.png)
 
