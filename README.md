@@ -93,7 +93,7 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
 1. Click on **Actions** to see the workflow runs.
     ![Open Actions](./images/open-actions.png)
 
-1. Click on the latest workflow to see it running. It will take several minutes to complete.
+1. Click on the latest workflow to see it running. It will take several minutes to complete. Note: In this view, the workflow will be whatever you typed for your commit message. 
     ![Open workflow run](./images/open-workflow-run.png)
 1. You'll see the current state of the three jobs that are in the workflow.
     ![In progress workflow](./images/in-progress-workflow.png)
