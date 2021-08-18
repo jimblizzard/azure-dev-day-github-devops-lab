@@ -101,7 +101,7 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
     You can click on each job name within the run to see the log messages for it.
     ![Looking at workflow logs](./images/looking-at-workflow-logs.png)
 
-1. Once the workflow completes, switch to the Azure Portal tab and from the Deployment slots view, click on the pre-prod slot link, then click on the URL for the pre-prod website. 
+1. Once the workflow completes, switch back to the Azure Portal tab and from the Deployment slots view, click on the pre-prod slot link, then click on the URL for the pre-prod website. 
 
     You should see the Success message on the pre-prod site.  
 
