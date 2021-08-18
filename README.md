@@ -98,7 +98,7 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
 1. You'll see the current state of the three jobs that are in the workflow.
     ![In progress workflow](./images/in-progress-workflow.png)
 
-    You can click on the name of each job to see the log messages for each.
+    You can click on each job name within the run to see the log messages for it.
     ![Looking at workflow logs](./images/looking-at-workflow-logs.png)
 
 1. Once the workflow completes, switch to the Azure Portal tab and from the Deployment slots view, click on the pre-prod slot link, then click on the URL for the pre-prod website. 
