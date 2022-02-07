@@ -123,6 +123,6 @@ Update the workflow to do a slot swap, to swap the production and pre-prod slots
 1. In the file **Application/views/index.pug** change the **.success-text** message to something such as **p Version 100 - Success!!**
 
     ![Modify success text](./images/modify-success-text.png)
-1. Commit the change.
+1. Commit the changes.
 1. Watch the workflow run.
 1. Once the workflow completes, check the pre-prod website and the production website. The production website should have the new version message, and the pre-prod slot will have the old message. 
