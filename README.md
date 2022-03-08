@@ -26,6 +26,8 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
 
     1. Click **Authorize** to allow Azure to access your GitHub account & create the workflow.
         ![DevOps Starter Create](./images/devops-starter-7.png)
+    1. If prompted, enter your GitHub username or email address, and password, then click **Sign in**.
+        ![DevOps Starter Create](./images/devops-starter-7-1.png) 
     1. Enter your GitHub Organization, Repository, Azure SubScription, Web app name, and Location. 
     1. Click **Review + Create**
         ![DevOps Starter Create](./images/devops-starter-8.png)
