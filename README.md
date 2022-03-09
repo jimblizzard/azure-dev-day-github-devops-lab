@@ -90,6 +90,7 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
 1. Click on the **source control icon** (1) then click the **plus sign** (2) to stage the changes you've made. Click in the **Message** box (3) and type a commit message. Then click on the **check mark** (4) to commit the change to the master branch. Your workflow will immediately start running since it's configured to run anytime anything is pushed to the master branch.
     ![Commit changes](./images/commit-changes-1.png)
 1. Return to the traditional GitHub UI by....  (1) In the address bar in your browser, (2) change the "dev" in the URL to "com" and then (3) press enter.
+
     ![Back to GitHub UI](./images/back-to-gh-ui.png)
 1. Click on Actions to go to the Actions tab, then click on the latest workflow to watch it run / view the results. It will take several minutes to complete. Note: In this view, the workflow run name will be whatever you typed for your commit message ("deploy and test pre-prod slot" in this case).
     ![Click on Actions](./images/click-actions-1.png)
