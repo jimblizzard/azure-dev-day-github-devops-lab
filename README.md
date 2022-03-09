@@ -68,7 +68,7 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
     ![repositories](./images/repositories-1.png)
 1. Navigate to the repository that the DevOps Starter created for you by clicking on its name. It's name is the same as the name of the App Service you created. 
     ![navigate to your repo](./images/open-your-repo.png)
-1. While on the **<> Code** tab, open the lightweight web editor in GitHub by pressing the period key on your keybaord, then open the devops-starter-workflow.yml file
+1. While on the **<> Code** tab, open the lightweight web editor in GitHub by pressing the **period** key on your keybaord, then open the devops-starter-workflow.yml file
     1. Click on **.github/workflows** 
     1. Click on **devops-starter-workflow.yml** to see the CI/CD pipeline that was created by the DevOps Starter project.
     ![Open yaml workflow](./images/open-workflow-1.png)
@@ -105,7 +105,7 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
 ## Extra credit
 Update the workflow to do a slot swap, and swap the production and pre-prod slots, then in the source code make a change to the website. Here's the basic outline:
 
-1. Note: to return to the lightweight web-based editor in GitHub, make sure you're on the **<> Code** tab, then press the period key on your keyboard. (You could also replace ".com" in the URL with ".dev" and vice-versa to switch views.)
+1. Remember: to return to the lightweight web-based editor in GitHub, make sure you're on the **<> Code** tab, then press the **period** key on your keyboard. (You could also replace ".com" in the URL with ".dev" and vice-versa to switch views.)
 1. Add new job to the end of the workflow. Be sure to add "needs: FunctionalTests" to make sure it runs after the FunctionalTests job completes. 
 1. Add a login to Azure action
 1. Add a swap slots action (you'll need to use the Azure CLI to run the command). 
