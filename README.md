@@ -1,7 +1,9 @@
 # Azure Dev Day Lab for GitHub DevOps
 Located here: <https://github.com/jimblizzard/azure-dev-day-github-devops-lab>
 
-In this lab we're going to see how easy it is to create a functional Azure Web App with its source code stored in GitHub and a GitHub CICD workflow that builds and deploys the web app. . . in just a matter of minutes.
+In this lab we're going to see how easy it is to create a functional Azure Web App with its source code stored in GitHub and a GitHub CI/CD workflow that builds and deploys the web app. . . in just a matter of minutes.
+
+*Note: in this repo (https://github.com/jimblizzarddemos/azure-dev-day-github-devops-lab) there is a **lab-code-snippets.yml** file that you can use to copy / paste updates into your repository's workflow file instead of having to manually type the the updates.*
 ## Create DevOps Starter project in Azure
 
 1. Open a browser and sign into the Microsoft Azure Portal at <https://portal.azure.com>
@@ -50,7 +52,7 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
     ![deployment slots](./images/deployment-slots-1.png)
     1. Click on **Deployment slots**
     1. Click on **+ Add Slot**  
-    1. Name the slot **"pre-prod"** NOTE: You'll use the slot name later on when you update your CICD pipeline.
+    1. Name the slot **"pre-prod"** NOTE: You'll use the slot name later on when you update your CI/CD pipeline.
     1. Choose Clone settings from: **{your production slot name}**
     1. Click **Add**.
     1. It will take a minute or so to create the pre-prod slot. Once it finishes, click **Close** at the boottom of that window.
@@ -73,8 +75,8 @@ In this lab we're going to see how easy it is to create a functional Azure Web A
 
     The workflow contains three jobs. **build**, **Deploy**, and **FunctionalTests**. We're going to update the workflow to add a slot swap action.
 
-1. Add an environment variable called **SLOT_NAME:** with the value of **"pre-prod"** by pasting **Snippet 1** from the lab-code-snippets.yml file. Be sure the variable is indented the same as the other enviromnent variables.
-    ![Add SLOT_NAME environment variable](./images/add-slot-env-var.png)
+1. Add an environment variable called **SLOT_NAME:** with the value of **"pre-prod"** by pasting **Snippet 1** from the **lab-code-snippets.yml** file. Be sure the variable is indented the same as the other enviromnent variables.
+    ![Add SLOT_NAME environment variable](./images/snippet-1.png)
 1. Modify the **web app deploy action** so it deploys to the pre-prod slot instead of the production slot.
     1. Replace the entire **Deploy web app on azure** action (lines 123 through 128) by pasting **Snippet 2** from the snippets file. After pasting the snippet, make sure the columns are indented similar to other actions as shown in the image below.
     ![Deploy to slot](./images/deploy-to-slot.png)
