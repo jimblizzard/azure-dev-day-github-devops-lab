@@ -108,7 +108,7 @@ Update the workflow to do a slot swap, and swap the production and pre-prod slot
 1. Add a login to Azure action
 1. Add a swap slots action (you'll need to use the Azure CLI to run the command). 
 
-    The newly added job should look similar to this:
+    The newly added job should look similar to this (remember -- in **.yml** files, **column alignment is crucial**):
 
     ![Swap Slots Job](./images/swap-slots.png)
 
